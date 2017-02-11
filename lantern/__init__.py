@@ -1,0 +1,1 @@
+from lantern import Light
