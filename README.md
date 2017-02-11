@@ -10,6 +10,8 @@ Lantern has been tested on the following operating system(s):
 
 + Ubuntu 16.10
 
+The protocol for communicating with the lights was reverse-engineered during a YouTube livestream: [Reverse Engineering the Yongnuo YN 360 Bluetooth Protocol](https://www.youtube.com/watch?v=wmpdj9N6pC0). The author uses the lights for studio lighting, and will be using the library in automation tools to ensure that each scene is properly lit.
+
 ## Installation
 
 You may encounter difficulty installing `bluepy`, but in most cases, simply running the following command will install Lantern.
