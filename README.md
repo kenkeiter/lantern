@@ -14,11 +14,15 @@ The protocol for communicating with the lights was reverse-engineered during a Y
 
 ## Installation
 
-You may encounter difficulty installing `bluepy`, but in most cases, simply running the following command will install Lantern.
+Lantern requires [`bluepy`](https://github.com/IanHarvey/bluepy) – an wrapper around the BTLE portions of Linux's official Bluetooth protocol stack, [BlueZ](http://www.bluez.org/). Although the `bluepy` installation usually goes smoothly, you may encounter issues. It is recommended that you visit the [`bluepy` project page](https://github.com/IanHarvey/bluepy) to review their installation instructions.
+
+Once you've got `bluepy`'s dependencies installed, you can run the following command from your virtual environment:
 
 ```bash
 $ pip install yn-lantern
 ```
+
+**NOTE**: Lantern was written for Python 3, and has not been tested (and will most likely not work) in Python 2.x.
 
 ## Getting Started
 
