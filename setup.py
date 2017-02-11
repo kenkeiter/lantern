@@ -25,7 +25,7 @@ def readme_handler(fname):
 if __name__ == '__main__':
       required = [str(ir.req) for ir in parse_requirements("requirements.txt")]
 
-setup(name='lantern',
+setup(name='yn-lantern',
       version='1.0.0',
       description='A library for communicating with Yongnuo LED video lights.',
       url='https://github.com/kenkeiter/lantern',

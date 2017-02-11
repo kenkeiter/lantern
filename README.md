@@ -15,7 +15,7 @@ Lantern has been tested on the following operating system(s):
 You may encounter difficulty installing `bluepy`, but in most cases, simply running the following command will install Lantern.
 
 ```bash
-$ pip install lantern
+$ pip install yn-lantern
 ```
 
 ## Getting Started
