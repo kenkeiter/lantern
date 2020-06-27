@@ -1,32 +1,29 @@
-import os
+import sys
 
-try:
-    from setuptools import setup
-    from pip.req import parse_requirements
-    from pip.download import PipSession
-except ImportError:
-    raise ImportError(
-        "Please upgrade `setuptools` to the newest version via: "
-        "`pip install -U setuptools`"
-    )
+from setuptools import setup
 
-def read_requirements():
-    '''parses requirements from requirements.txt'''
-    reqs_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'requirements.txt')
-    install_reqs = parse_requirements(reqs_path, session=PipSession())
-    reqs = [str(ir.req) for ir in install_reqs]
-    return reqs
+
+def parse_requirements(filename):
+    """ load requirements from a pip requirements file """
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
+
+with open('README.md', 'r') as fh:
+    readme = fh.read()
 
 if __name__ == '__main__':
     setup(name='yn-lantern',
-          version='1.0.0',
-          description='A library for communicating with Yongnuo LED video lights.',
-          url='https://github.com/kenkeiter/lantern',
-          author='Ken Keiter',
-          author_email='ken@kenkeiter.com',
-          license='MIT',
-          packages=['lantern'],
-          include_package_data=True,
-          test_suite='nose.collector',
-          tests_require=['nose'],
-          install_requires=read_requirements())
+        version='1.1.0',
+        description='A library for communicating with Yongnuo LED video lights.',
+        long_description = readme,
+        long_description_content_type = 'text/markdown',
+        url='https://github.com/kenkeiter/lantern',
+        author='Ken Keiter',
+        author_email='ken@kenkeiter.com',
+        license='MIT',
+        packages=['lantern'],
+        include_package_data=True,
+        keywords = ['video', 'photo', 'lantern', 'light'],
+        test_suite='nose.collector',
+        tests_require=['nose'],
+        install_requires=parse_requirements('requirements.txt'))
