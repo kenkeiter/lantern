@@ -1,1 +1,1 @@
-from lantern import Light
+from .light import Light
