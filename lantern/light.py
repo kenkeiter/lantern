@@ -1,4 +1,4 @@
-import re
+import re, struct
 
 from bluepy import btle
 
