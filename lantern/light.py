@@ -1,4 +1,4 @@
-import re
+import re, struct
 
 from bluepy import btle
 
@@ -147,7 +147,7 @@ class Light(object):
             g = (value & 0x00ff00) >> 8
             b = (value & 0x0000ff)
             self._color = (self.COLOR_TYPES['rgb'], (r, g, b))
-        elif isinstance(value, [list, tuple]):
+        elif isinstance(value, (list, tuple)):
             for component in value:
                 if component < 0 or component > 255:
                     raise ValueError('values must be within range [0, 255]')    
